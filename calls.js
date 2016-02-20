@@ -21,13 +21,17 @@ function callAPI(inString) {
                 else {
                     console.log(result);
                     console.log(result.queryresult.pod)
+
                     if(result.queryresult.pod == null){
-                        alert("No Results Found");
+                        var tempDiv = document.createElement('div');
+                        sidebar.appendChild();
                         return;
                     }
                     for (var a = 0; a < result.queryresult.pod.length; a++) {
                         var pod = result.queryresult.pod[a];
                         console.log(pod.$.title, ": ");
+                        var nv = document.createElement('nav');
+                        nv.className = 'nav-group'
                         for (var b = 0; b < pod.subpod.length; b++) {
                             var subpod = pod.subpod[b];
                             console.log("hi");
@@ -35,7 +39,7 @@ function callAPI(inString) {
                                 var text = subpod.plaintext[c];
                                 console.log('\t', text);
                                 var innerDiv = document.createElement('div');
-                                innerDiv.className = 'block-2';
+                                innerDiv.className = 'nav-group-item';
                                 sidebar.appendChild(innerDiv);
                                 innerDiv.innerHTML = text;
                             }
