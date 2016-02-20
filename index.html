@@ -20,47 +20,66 @@
       </header>
 
       <!-- Your app's content goes inside .window-content -->
-      <div class="window">
-        <div class="window-content">
-          <div class="pane-group">
-            
-            <div class="pane">
-              <header class="toolbar toolbar-header">
-                <h1 class="title">Header with actions</h1>
+      <div class="window" >
+        <div class="window-content" >
+
+          <div class="pane-group" >
+           <div class="pane-sm sidebar" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
+              </div>
+            <div class="pane" style="overflow:hidden;">
+
+               
+              <header class="toolbar toolbar-header" id="toolbar" style="z-index:99999;position:fixed; width:100%;text-align:center;">
+                <h1 class="title" style="font-size:20px;">Shut the fuck up Harrison</h1>
                 <div class="toolbar-actions" id="toolbar">
-                  <div class="btn-group">
-                    <button class="btn btn-default ql-bold" id="bold_button">
+                  <div class="btn-group" style>
+                    <button class="btn btn-default ql-bold"  id="bold_button">
                       <span><p>B</p></span>
                     </button>
                     <button class="btn btn-default ql-italic" id="italics_button">
                       <p>I</p>
                     </button>
-                    <button class="btn btn-default active ql-underline" id="underline_button">
+                    <button class="btn btn-default ql-underline" id="underline_button">
                       <p>U</p>
                     </button>
                   </div>
                   <div class="btn-group">
-                    <button class="btn btn-default active ql-bullet" id="bullets_button">
-                      <span class="icon icon-list"></span>
+                    <button class="btn btn-default ql-bullet" id="bullets_button" style="height:48px; color:blue;">
+                      <span class="icon icon-list"><p></p></span>
                     </button>
-                    <button class="btn btn-default ql-list" id="numbers_button">
-                      <span><p>1...</p></span>
+                    <button class="btn btn-default ql-list" id="numbers_button" >
+                      <span><p>1.<br></p></span>
+                    </button>
+
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-default">
+                      <span><p>Save</p></span>
+                    </button>
+                    <button class="btn btn-default">
+                      <span><p>Load</p></span>
                     </button>
                   </div>
+                  <button class= "btn btn-default">
+                    <span><p>Analyze</p></span>
+                  </button>
                 </div>
               </header>
-              <div id="editor">
-                <p>Sample Text</p>
-              </div>
+             
+              <div class="textarea" id="editor" style="margin-top:100px;position:absolute;">
 
+                <p></p>
+              </div>
               <script>
                 var Quill = require('quill')
                 var editor = new Quill('#editor', {
                   modules: {toolbar: '#toolbar' },
                   theme: 'snow'
                 });
+               
               </script>
             </div>
+
           </div>
         </div>
       </div>

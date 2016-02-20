@@ -315,11 +315,9 @@ h6 {
 .btn {
   display: inline-block;
   padding: 3px 8px;
-  margin-bottom: 0;
   font-size: 12px;
   line-height: 1.4;
-  text-align: center;
-  white-space: nowrap;
+    white-space: nowrap;
   vertical-align: middle;
   cursor: default;
   background-image: none;

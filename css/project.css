@@ -1,9 +1,8 @@
-textarea {
+.textarea {
         width: 100%;
         height: 100%;
         border: none;
         outline: none;
-        position: fixed;
         resize: none;
         overflow-y: auto;
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -11,14 +10,41 @@ textarea {
         box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+
 #bold_button {
         font-weight: bold;
 }
 
 #italics_button {
+
         font-style: italic;
+        
 }
 
 #underline_button {
         text-decoration: underline;
+}
+
+
+#toolbar{
+        text-align: center;
+}
+#smartsearch{
+        width:100px;
+        position:fixed;
+        z-index: -1;
+        background-color: #C8C8C8;
+        
+}
+#fixheader {
+        top:0px;
+        width:100%;
+        text-align: center;
+        position: fixed;
+}
+
+h1{
+        font-size: 45px;
+        font-family: Curlz MT;
+        color: magenta;
 }
