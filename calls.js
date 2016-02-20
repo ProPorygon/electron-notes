@@ -9,24 +9,26 @@ function callAPI() {
         // See http://www.alchemyapi.com/api/keyword/htmlc.html for format of returned object
         var keywords = response.keywords;
         console.log(keywords[1].text);
-        var qu = keywords[1].text;
-        Wolfram.query(qu, function (err, result) {
-            if (err)
-                console.log(err);
-            else {
-                for (var a = 0; a < result.queryresult.pod.length; a++) {
-                    var pod = result.queryresult.pod[a];
-                    console.log(pod.$.title, ": ");
-                    for (var b = 0; b < pod.subpod.length; b++) {
-                        var subpod = pod.subpod[b];
-                        for (var c = 0; c < subpod.plaintext.length; c++) {
-                            var text = subpod.plaintext[c];
-                            console.log('\t', text);
+        for (var idx = 0; idx < keywords.length; idx++) {
+            var qu = keywords[idx].text;
+            Wolfram.query(qu, function (err, result) {
+                if (err)
+                    console.log(err);
+                else {
+                    for (var a = 0; a < result.queryresult.pod.length; a++) {
+                        var pod = result.queryresult.pod[a];
+                        console.log(pod.$.title, ": ");
+                        for (var b = 0; b < pod.subpod.length; b++) {
+                            var subpod = pod.subpod[b];
+                            for (var c = 0; c < subpod.plaintext.length; c++) {
+                                var text = subpod.plaintext[c];
+                                console.log('\t', text);
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        }
         // Do something with data
     });
 }
