@@ -10,3 +10,15 @@ textarea {
         -moz-box-sizing: border-box;    /* Firefox, other Gecko */
         box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
+#bold_button {
+        font-weight: bold;
+}
+
+#italics_button {
+        font-style: italic;
+}
+
+#underline_button {
+        text-decoration: underline;
+}

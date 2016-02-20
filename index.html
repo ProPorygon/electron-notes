@@ -15,7 +15,7 @@
     <div class="window">
       <!-- .toolbar-header sits at the top of your app -->
       <header class="toolbar toolbar-header">
-        <h1 class="title">Photon</h1>
+        <h1 class="title">Notes</h1>
       </header>
 
       <!-- Your app's content goes inside .window-content -->
@@ -52,36 +52,39 @@
             <div class="pane">
               <header class="toolbar toolbar-header">
                 <h1 class="title">Header with actions</h1>
-                <div class="toolbar-actions">
+                <div class="toolbar-actions" id="toolbar">
                   <div class="btn-group">
-                    <button class="btn btn-default">
-                      <span class="icon icon-home"></span>
+                    <button class="btn btn-default ql-bold" id="bold_button">
+                      <span><p>B</p></span>
                     </button>
-                    <button class="btn btn-default">
-                      <span class="icon icon-folder"></span>
+                    <button class="btn btn-default ql-italic" id="italics_button">
+                      <p>I</p>
                     </button>
-                    <button class="btn btn-default active">
-                      <span class="icon icon-cloud"></span>
-                    </button>
-                    <button class="btn btn-default">
-                      <span class="icon icon-popup"></span>
-                    </button>
-                    <button class="btn btn-default">
-                      <span class="icon icon-shuffle"></span>
+                    <button class="btn btn-default active ql-underline" id="underline_button">
+                      <p>U</p>
                     </button>
                   </div>
-
-                  <button class="btn btn-default">
-                    <span class="icon icon-home icon-text"></span>
-                    Filters
-                  </button>
-
-                  <button class="btn btn-default btn-dropdown pull-right">
-                    <span class="icon icon-megaphone"></span>
-                  </button>
+                  <div class="btn-group">
+                    <button class="btn btn-default active ql-bullet" id="bullets_button">
+                      <span class="icon icon-list"></span>
+                    </button>
+                    <button class="btn btn-default ql-list" id="numbers_button">
+                      <span><p>1...</p></span>
+                    </button>
+                  </div>
                 </div>
               </header>
-              <textarea ></textarea>
+              <div id="editor">
+                <p>Sample Text</p>
+              </div>
+
+              <script>
+                var Quill = require('quill')
+                var editor = new Quill('#editor', {
+                  modules: {toolbar: '#toolbar' },
+                  theme: 'snow'
+                });
+              </script>
             </div>
           </div>
         </div>
