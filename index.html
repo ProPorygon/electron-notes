@@ -24,7 +24,7 @@
         <div class="window-content" >
 
           <div class="pane-group" >
-           <div class="pane-sm sidebar" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
+           <div class="pane-sm sidebar" id="result-sidebar" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
               </div>
             <div class="pane" style="overflow:hidden;">
 
@@ -76,6 +76,22 @@
                   modules: {toolbar: '#toolbar' },
                   theme: 'snow'
                 });
+
+                editor.on('selection-change', function(range) {
+                if (range) {
+                  if (range.start == range.end) {
+                    console.log('User cursor is on', range.start);
+                  } else {
+
+                    var text = editor.getText(range.start, range.end);
+                    console.log('User has highlighted', text);
+                    document.getElementById("result-sidebar").innerHTML = text;
+                  }
+                } else {
+                  console.log('Cursor not in the editor');
+                }
+              });
+
                
               </script>
             </div>
