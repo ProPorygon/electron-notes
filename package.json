@@ -1,28 +1,30 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-notes",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Electron based notes app with Wolfram suggestions",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atom/electron-quick-start.git"
+    "url": "git+"
   },
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial"
+    "notes"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Kevin Renner, Ziwei Ba, Harrison Qu",
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/atom/electron-quick-start/issues"
+    "url": "https://github.com/ProPorygon/electron-notes/issues"
   },
-  "homepage": "https://github.com/atom/electron-quick-start#readme",
+  "homepage": "https://github.com/ProPorygon/electron-notes",
   "devDependencies": {
     "electron-prebuilt": "^0.36.0"
+  },
+  "dependencies": {
+    "quill": "^0.20.1",
+    "react-photonkit": "^0.4.1"
   }
 }
