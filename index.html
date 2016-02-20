@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Photon</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.css">
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Electron Javascript -->
+    <script src="app.js" charset="utf-8"></script>
   </head>
+
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <!-- Wrap your entire app inside .window -->
+    <div class="window">
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Photon</h1>
+      </header>
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window">
+        <div class="window-content">
+          <div class="pane-group">
+            <div class="pane-sm sidebar"><nav class="nav-group">
+                <h5 class="nav-group-title">Favorites</h5>
+                <a class="nav-group-item active">
+                  <span class="icon icon-home"></span>
+                  connors
+                </a>
+                <span class="nav-group-item">
+                  <span class="icon icon-download"></span>
+                  Downloads
+                </span>
+                <span class="nav-group-item">
+                  <span class="icon icon-folder"></span>
+                  Documents
+                </span>
+                <span class="nav-group-item">
+                  <span class="icon icon-signal"></span>
+                  AirPlay
+                </span>
+                <span class="nav-group-item">
+                  <span class="icon icon-print"></span>
+                  Applications
+                </span>
+                <span class="nav-group-item">
+                  <span class="icon icon-cloud"></span>
+                  Desktop
+                </span>
+              </nav></div>
+            <div class="pane">
+              <header class="toolbar toolbar-header">
+                <h1 class="title">Header with actions</h1>
+                <div class="toolbar-actions">
+                  <div class="btn-group">
+                    <button class="btn btn-default">
+                      <span class="icon icon-home"></span>
+                    </button>
+                    <button class="btn btn-default">
+                      <span class="icon icon-folder"></span>
+                    </button>
+                    <button class="btn btn-default active">
+                      <span class="icon icon-cloud"></span>
+                    </button>
+                    <button class="btn btn-default">
+                      <span class="icon icon-popup"></span>
+                    </button>
+                    <button class="btn btn-default">
+                      <span class="icon icon-shuffle"></span>
+                    </button>
+                  </div>
+
+                  <button class="btn btn-default">
+                    <span class="icon icon-home icon-text"></span>
+                    Filters
+                  </button>
+
+                  <button class="btn btn-default btn-dropdown pull-right">
+                    <span class="icon icon-megaphone"></span>
+                  </button>
+                </div>
+              </header>
+              <textarea ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
