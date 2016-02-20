@@ -5,6 +5,6 @@ alchemy.keywords('Glucose is comprised of 6 carbons, 12 hydrogens, and 6 oxygens
 
     // See http://www.alchemyapi.com/api/keyword/htmlc.html for format of returned object
     var keywords = response.keywords;
-    console.log(keywords[0]);
+    console.log(keywords[1].text);
     // Do something with data
 });
