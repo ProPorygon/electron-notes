@@ -6,10 +6,14 @@ function callAPI(inString) {
     alchemy.keywords(inString, {}, function (err, response) {
         if (err) throw err;
         var sidebar = document.getElementById("side");
-
+        sidebar.innerHTML = "";
         // See http://www.alchemyapi.com/api/keyword/htmlc.html for format of returned object
         var keywords = response.keywords;
-        console.log(keywords[1].text);
+        console.log(keywords);
+        if(keywords == null || keywords.length == 0){
+            alert("No keywords found!");
+            return;
+        }
         for (var idx = 0; idx < keywords.length; idx++) {
             var qu = keywords[idx].text;
             Wolfram.query(qu, function (err, result) {
@@ -36,4 +40,9 @@ function callAPI(inString) {
         }
         // Do something with data
     });
+}
+
+function anal(){
+    var txt = editor.getText();
+    callAPI(txt);
 }
