@@ -94,8 +94,8 @@
                 function onMouseUp(){
                   var selection = window.getSelection();
                   if (selection){
-                    console.log('User has highlighted', text);
-                  callWolframAPI(getSelectionText());
+                    console.log('User has highlighted', getSelectionText());
+                     callWolframAPI(getSelectionText());
                   
                   }
                   
