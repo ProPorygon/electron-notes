@@ -7,7 +7,9 @@ var loaded_file;
 
 function saveFile() {
     if(!loaded_file) {
-        dialog.showSaveDialog(function(filename) {
+        dialog.showSaveDialog({ filters: [
+            { name: 'text', extensions: ['html', 'txt'] }
+        ]}, function(filename) {
             if(filename === undefined) return;
             writeToFile(editor, filename);
         });
@@ -18,7 +20,9 @@ function saveFile() {
 }
 
 function loadFile() {
-    dialog.showOpenDialog(function(filenames) {
+    dialog.showOpenDialog({ filters: [
+        { name: 'text', extensions: ['html', 'txt'] }
+    ]}, function(filenames) {
         if(filenames === undefined) return;
         var filename = filenames[0];
         readFromFile(editor, filename);
