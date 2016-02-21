@@ -10,6 +10,7 @@
     <script src="app.js" charset="utf-8"></script>
     <script src="calls.js" charset="utf-8"></script>
     <script src="fileio.js" charset="utf-8"></script>
+    <script src="ui.js" charset="utf-8"></script>
   </head>
 
   <body>
@@ -37,21 +38,21 @@
               <header class="toolbar toolbar-header" id="toolbar" style="z-index:99999;position:fixed; width:100%;text-align:center;">
                 <div class="toolbar-actions" id="toolbar">
                   <div class="btn-group" style>
-                    <button class="btn btn-default ql-bold"  id="bold_button">
+                    <button class="btn btn-default ql-bold"  id="bold_button" onclick="toggle_active(this.id)">
                       <span><p>B</p></span>
                     </button>
-                    <button class="btn btn-default ql-italic" id="italics_button">
+                    <button class="btn btn-default ql-italic" id="italics_button" onclick="toggle_active(this.id)">
                       <p>I</p>
                     </button>
-                    <button class="btn btn-default ql-underline" id="underline_button">
+                    <button class="btn btn-default ql-underline" id="underline_button" onclick="toggle_active(this.id)">
                       <p>U</p>
                     </button>
                   </div>
                   <div class="btn-group">
-                    <button class="btn btn-default ql-bullet" id="bullets_button" style="height:48px; color:blue;">
+                    <button class="btn btn-default ql-bullet" id="bullets_button" style="height:48px; color:blue;" onclick="set_active_list(this.id)">
                       <span class="icon icon-list"><p></p></span>
                     </button>
-                    <button class="btn btn-default ql-list" id="numbers_button" >
+                    <button class="btn btn-default ql-list" id="numbers_button" onclick="set_active_list(this.id)">
                       <span><p>1.<br></p></span>
                     </button>
 
