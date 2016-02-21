@@ -42,6 +42,11 @@ function callAPI(inString) {
                                 var content = document.createElement('p');
                                 medBod.appendChild(content);
                                 content.innerHTML = text;
+                                if(subpod.img[0].$.alt == "") {
+                                    var img = document.createElement("img");
+                                    img.src = subpod.img[0].$.src;
+                                    medBod.appendChild(img);
+                                }
                             }
                         }
                     }
@@ -80,6 +85,7 @@ function callWolframAPI(inString) {
                     for (var a = 0; a < result.queryresult.pod.length; a++) {
                         var pod = result.queryresult.pod[a];
                         console.log(pod.$.title, ": ");
+                        console.log(result.queryresult);
                         var item = document.createElement('li');
                         item.className = "list-group-item";
                         sidebar.appendChild(item);
@@ -97,6 +103,11 @@ function callWolframAPI(inString) {
                                 var content = document.createElement('p');
                                 medBod.appendChild(content);
                                 content.innerHTML = text;
+                                if(subpod.img[0].$.alt == "") {
+                                    var img = document.createElement("img");
+                                    img.src = subpod.img[0].$.src;
+                                    medBod.appendChild(img);
+                                }
                             }
                         }
                     }
