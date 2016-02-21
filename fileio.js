@@ -8,7 +8,7 @@ var loaded_file;
 function saveFile() {
     if(!loaded_file) {
         dialog.showSaveDialog({ filters: [
-            { name: 'text', extensions: ['html', 'txt'] }
+            { name: 'html', extensions: ['html'] }
         ]}, function(filename) {
             if(filename === undefined) return;
             writeToFile(editor, filename);
