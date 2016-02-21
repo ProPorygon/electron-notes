@@ -9,9 +9,12 @@ function callAPI(inString) {
         // See http://www.alchemyapi.com/api/keyword/htmlc.html for format of returned object
         var keywords = response.keywords;
         sidebar.innerHTML = "";
-
+        if(keywords == null || keywords.length == 0){
+            return
+        }
         for (var idx = 0; idx < keywords.length; idx++) {
             var qu = keywords[idx].text;
+
             Wolfram.query(qu, function (err, result) {
                 if (err)
                     console.log(err);
