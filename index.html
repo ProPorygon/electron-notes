@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Photon</title>
+    <title>Notes</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
@@ -9,6 +9,7 @@
     <!-- Electron Javascript -->
     <script src="app.js" charset="utf-8"></script>
     <script src="calls.js" charset="utf-8"></script>
+    <script src="fileio.js" charset="utf-8"></script>
   </head>
 
   <body>
@@ -59,10 +60,10 @@
 
                   </div>
                   <div class="btn-group">
-                    <button class="btn btn-default">
+                    <button class="btn btn-default" id="save_button" onclick="saveFile()">
                       <span><p>Save</p></span>
                     </button>
-                    <button class="btn btn-default">
+                    <button class="btn btn-default" id="load_button" onclick="loadFile()">
                       <span><p>Load</p></span>
                     </button>
                   </div>
