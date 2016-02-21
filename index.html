@@ -85,7 +85,7 @@
 
                     var text = editor.getText(range.start, range.end);
                     console.log('User has highlighted', text);
-                    document.getElementById("side").innerHTML = text;
+                    document.getElementById("side").innerHTML = callAPI(text);
                   }
                 } else {
                   console.log('Cursor not in the editor');
