@@ -22,9 +22,9 @@
       <!-- Your app's content goes inside .window-content -->
       <div class="window" >
         <div class="window-content" >
-
           <div class="pane-group" >
-           <div class="pane-sm sidebar" id="result-sidebar" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
+
+           <div class="pane-sm sidebar" id="side" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
               </div>
             <div class="pane" style="overflow:hidden;">
 
@@ -60,7 +60,7 @@
                       <span><p>Load</p></span>
                     </button>
                   </div>
-                  <button class= "btn btn-default">
+                  <button onclick="anal()" class= "btn btn-default">
                     <span><p>Analyze</p></span>
                   </button>
                 </div>
@@ -85,7 +85,7 @@
 
                     var text = editor.getText(range.start, range.end);
                     console.log('User has highlighted', text);
-                    document.getElementById("result-sidebar").innerHTML = text;
+                    document.getElementById("side").innerHTML = text;
                   }
                 } else {
                   console.log('Cursor not in the editor');
