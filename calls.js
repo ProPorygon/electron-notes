@@ -80,14 +80,23 @@ function callWolframAPI(inString) {
                     for (var a = 0; a < result.queryresult.pod.length; a++) {
                         var pod = result.queryresult.pod[a];
                         console.log(pod.$.title, ": ");
+                        var item = document.createElement('li');
+                        item.className = "list-group-item";
+                        sidebar.appendChild(item);
+                        var medBod = document.createElement('media-body');
+                        item.appendChild(medBod);
+                        var podTitle = document.createElement('strong');
+                        podTitle.innerHTML = pod.$.title;
+                        medBod.appendChild(podTitle);
+
                         for (var b = 0; b < pod.subpod.length; b++) {
                             var subpod = pod.subpod[b];
                             for (var c = 0; c < subpod.plaintext.length; c++) {
                                 var text = subpod.plaintext[c];
                                 console.log('\t', text);
-                                var innerDiv = document.createElement('p');
-                                sidebar.appendChild(innerDiv);
-                                innerDiv.innerHTML = text;
+                                var content = document.createElement('p');
+                                medBod.appendChild(content);
+                                content.innerHTML = text;
                             }
                         }
                     }
