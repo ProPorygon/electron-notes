@@ -10,6 +10,8 @@ Press analyze to get information on keywords in the entire document.
 
 The app is also a fully functional text editor.
 
+To run from source: Make sure you have npm installed, then 'npm install' and 'npm start'
+
 ### Authors
 [Kevin Renner](https://github.com/ProPorygon)
 
