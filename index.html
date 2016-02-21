@@ -5,6 +5,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
+    <link rel="stylesheet" href="css/quill.snow.css"> 
     <link rel="stylesheet" href="css/project.css">
     <!-- Electron Javascript -->
     <script src="app.js" charset="utf-8"></script>
@@ -25,8 +26,12 @@
       <div class="window" >
         <div class="window-content" >
           <div class="pane-group" >
-           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow-x: auto;-webkit-user-select:all;height:100%;z-index:1;width:200px;background-color:#C8C8C8;float:left;box-shadow: 10px 10px 5px #888;">
-             <div class="list-group-header">
+           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow-x: auto;-webkit-user-select:all;height:100%;z-index:1;width:200px;background-color:white;color:black;float:left;text-decoration:none;" >
+             <div class="list-group-header" style="background-color: #e8e6e8;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8e6e8), color-stop(100%, #d1cfd1));
+  background-image: -webkit-linear-gradient(top, #e8e6e8 0%, #d1cfd1 100%);
+  background-image: linear-gradient(to bottom, #e8e6e8 0%, #d1cfd1 100%);
+color:black;height:80px;text-align:center;text-decoration:none;">
                <h4>Search Results</h4>
                <hr>
              </div>
@@ -35,9 +40,9 @@
              </ul>
            </div>
             <div class="pane" style="overflow:hidden;">
-              <header class="toolbar toolbar-header" id="toolbar" style="z-index:99999;position:fixed; width:100%;text-align:center;">
-                <div class="toolbar-actions" id="toolbar">
-                  <div class="btn-group" style>
+              <header class="toolbar toolbar-header" id="toolbar" style="z-index:99999;height:80px;background-color:white;width:100%;text-align:center;">
+                <div class="toolbar-actions" id="toolbar" style="position:fixed; vertical-align:middle; margin-left:200px; ">
+                  <div class="btn-group" >
                     <button class="btn btn-default ql-bold"  id="bold_button" onclick="toggle_active(this.id)">
                       <span><p>B</p></span>
                     </button>
@@ -69,10 +74,25 @@
                     <span><p>Analyze</p></span>
                   </button>
                 </div>
+                <span class="ql-format-group" style="margin-top:25px;margin-left:30px;position:fixed;z-index:4;">
+                <select title="Font" class="ql-font" style="height:30px;">
+                <option value="Helvetica" selected>Helvetica</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="monospace">Code</option>
+                <option value="Monotype Corsiva">Monotype Corsiva</option>
+                <option value="Curlz MT">Curlz MT</option>
+                </select>
+                <select title="Size" class="ql-size">
+                <option value="10px">Small</option>
+                <option value="12px" selected>Normal</option>
+                <option value="18px">Large</option>
+                <option value="32px">Huge</option>
+                </select>
+                </span>
+              
               </header>
              
-              <div class="textarea" id="editor" onmouseup="onMouseUp()" onmousedown="onMouseDown()" style="margin-left:10px;margin-top:70px;position:absolute;">
-
+              <div class="textarea" class= "ql-editor" id="editor" onmouseup="onMouseUp()" onmousedown="onMouseDown()" style="margin-left:10px;margin-top:20px;position:absolute;">
                 <p></p>
               </div>
               <script>
@@ -80,7 +100,12 @@
                 var editor = new Quill('#editor', {
                   modules: {toolbar: '#toolbar' },
                   theme: 'snow'
+
                 });
+
+
+
+
                 /*
                 function getSelectionText() {
                 var text = "";
@@ -106,6 +131,7 @@
                   
                 }
 
+                
                 /*
                 editor.on('selection-change', function(range) {
                 if (range) {
