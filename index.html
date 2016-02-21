@@ -24,13 +24,19 @@
         <div class="window-content" >
           <div class="pane-group" >
 
-           <div class="pane-sm sidebar" id="side" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
-              </div>
+           <div class="pane-sm sidebar" style="z-index:1;width:100px;background-color:#C8C8C8;float:left;">
+             <div class="list-group-header">
+               <h4>Search Results</h4>
+               <hr>
+             </div>
+             <ul class="list-group" id="side">
+
+             </ul>
+           </div>
             <div class="pane" style="overflow:hidden;">
 
                
               <header class="toolbar toolbar-header" id="toolbar" style="z-index:99999;position:fixed; width:100%;text-align:center;">
-                <h1 class="title" style="font-size:20px;">Insert Cool App Name</h1>
                 <div class="toolbar-actions" id="toolbar">
                   <div class="btn-group" style>
                     <button class="btn btn-default ql-bold"  id="bold_button">
@@ -85,7 +91,7 @@
 
                     var text = editor.getText(range.start, range.end);
                     console.log('User has highlighted', text);
-                    document.getElementById("side").innerHTML = callAPI(text);
+                    document.getElementById("side").innerHTML = callWolframAPI(text);
                   }
                 } else {
                   console.log('Cursor not in the editor');
