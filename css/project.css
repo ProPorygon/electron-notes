@@ -9,7 +9,9 @@
         -moz-box-sizing: border-box;    /* Firefox, other Gecko */
         box-sizing: border-box;         /* Opera/IE 8+ */
 }
-
+*{
+        font-family: Arial;
+}
 #bold_button {
         font-weight: bold;
 }

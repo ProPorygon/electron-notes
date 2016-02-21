@@ -10,6 +10,7 @@ function callAPI(inString) {
         var keywords = response.keywords;
         sidebar.innerHTML = "";
         if(keywords == null || keywords.length == 0){
+        	sidebar.style.color = "black";
             sidebar.innerHTML = "No keywords found. \n Please try a more specific search by highlighting."
             return
         }
@@ -28,12 +29,15 @@ function callAPI(inString) {
                         var pod = result.queryresult.pod[a];
                         console.log(pod.$.title, ": ");
                         var item = document.createElement('li');
+                        item.style.color = "black";
                         item.className = "list-group-item";
                         sidebar.appendChild(item);
                         var medBod = document.createElement('media-body');
                         item.appendChild(medBod);
+                        medBod.style.color = "black";
                         var podTitle = document.createElement('strong');
                         podTitle.innerHTML = pod.$.title;
+                        podTitle.style.color = "black";
                         medBod.appendChild(podTitle);
 
                         for (var b = 0; b < pod.subpod.length; b++) {
@@ -43,6 +47,7 @@ function callAPI(inString) {
                                 console.log('\t', text);
                                 var content = document.createElement('p');
                                 medBod.appendChild(content);
+                                content.style.color = "black"
                                 content.innerHTML = text;
                                 if(subpod.img[0].$.alt == "") {
                                     var img = document.createElement("img");
@@ -72,6 +77,7 @@ function callWolframAPI(inString) {
     var Client = require('node-wolfram');
     var Wolfram = new Client('WGTR76-VGTY7HUV2X');
     var sidebar = document.getElementById("side");
+    sidebar.style.color = "black"
     sidebar.innerHTML = "";
     var qu = inString;
             Wolfram.query(qu, function (err, result) {
@@ -89,12 +95,15 @@ function callWolframAPI(inString) {
                         console.log(pod.$.title, ": ");
                         console.log(result.queryresult);
                         var item = document.createElement('li');
+                        item.style.color = "black"
                         item.className = "list-group-item";
                         sidebar.appendChild(item);
                         var medBod = document.createElement('media-body');
+                        medBod.style.color = "black";
                         item.appendChild(medBod);
                         var podTitle = document.createElement('strong');
                         podTitle.innerHTML = pod.$.title;
+                        podTitle.style.color = "black";
                         medBod.appendChild(podTitle);
 
                         for (var b = 0; b < pod.subpod.length; b++) {
@@ -104,6 +113,7 @@ function callWolframAPI(inString) {
                                 console.log('\t', text);
                                 var content = document.createElement('p');
                                 medBod.appendChild(content);
+                                content.style.color="black";
                                 content.innerHTML = text;
                                 if(subpod.img[0].$.alt == "") {
                                     var img = document.createElement("img");
