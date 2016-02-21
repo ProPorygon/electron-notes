@@ -4,5 +4,7 @@ Relevant information from Wolfram-Alpha is shown on a sidebar when highligthing 
 
 ### Authors
 [Kevin Renner](https://github.com/ProPorygon)
+
 [Ziwei Ba](https://github.com/ziwikiwi)
+
 [Harrison Qu](https://github.com/githubhq)
