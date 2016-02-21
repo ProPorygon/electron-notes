@@ -9,7 +9,7 @@ function callAPI(inString) {
         // See http://www.alchemyapi.com/api/keyword/htmlc.html for format of returned object
         var keywords = response.keywords;
         if(keywords == null || keywords.length == 0){
-            alert("No keywords found!");
+           // alert("No keywords found!");
             return;
         }
         sidebar.innerHTML = "";
@@ -39,7 +39,7 @@ function callAPI(inString) {
                                 var text = subpod.plaintext[c];
                                 console.log('\t', text);
                                 var innerDiv = document.createElement('div');
-                                innerDiv.className = 'nav-group-item';
+                                innerDiv.className = 'list-group-item';
                                 sidebar.appendChild(innerDiv);
                                 innerDiv.innerHTML = text;
                             }
