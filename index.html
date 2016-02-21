@@ -24,7 +24,7 @@
       <div class="window" >
         <div class="window-content" >
           <div class="pane-group" >
-           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow: auto;-webkit-user-select:all;height:100%;z-index:1;width:200px;background-color:#C8C8C8;float:left;box-shadow: 10px 10px 5px #888;">
+           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow-x: auto;-webkit-user-select:all;height:100%;z-index:1;width:200px;background-color:#C8C8C8;float:left;box-shadow: 10px 10px 5px #888;">
              <div class="list-group-header">
                <h4>Search Results</h4>
                <hr>
@@ -70,7 +70,7 @@
                 </div>
               </header>
              
-              <div class="textarea" id="editor" onmouseup="onMouseUp()" style="margin-top:100px;position:absolute;">
+              <div class="textarea" id="editor" onmouseup="onMouseUp()" onmousedown="onMouseDown()" style="margin-left:10px;margin-top:70px;position:absolute;">
 
                 <p></p>
               </div>
@@ -80,7 +80,7 @@
                   modules: {toolbar: '#toolbar' },
                   theme: 'snow'
                 });
-
+                /*
                 function getSelectionText() {
                 var text = "";
                 if (window.getSelection) {
@@ -90,13 +90,17 @@
                 }
                 return text;
                 }
+                */
+                function onMouseDown(){
+                  window.getSelection().empty();
+                }
 
                 function onMouseUp(){
-                  var selection = window.getSelection();
+                  var selection = window.getSelection().toString();
                   if (selection){
-                    console.log('User has highlighted', getSelectionText());
-                     callWolframAPI(getSelectionText());
-                  
+                    console.log('User has highlighted', selection);
+                    if (selection.length > 0)
+                     callWolframAPI(selection);
                   }
                   
                 }
