@@ -24,7 +24,7 @@
       <div class="window" >
         <div class="window-content" >
           <div class="pane-group" >
-           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow: auto;-webkit-user-select:all;height:100%;z-index:1;width:100px;background-color:#C8C8C8;float:left;">
+           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow: auto;-webkit-user-select:all;height:100%;z-index:1;width:200px;background-color:#C8C8C8;float:left;box-shadow: 10px 10px 5px #888;">
              <div class="list-group-header">
                <h4>Search Results</h4>
                <hr>
@@ -70,7 +70,7 @@
                 </div>
               </header>
              
-              <div class="textarea" id="editor" style="margin-top:100px;position:absolute;">
+              <div class="textarea" id="editor" onmouseup="onMouseUp()" style="margin-top:100px;position:absolute;">
 
                 <p></p>
               </div>
@@ -81,6 +81,27 @@
                   theme: 'snow'
                 });
 
+                function getSelectionText() {
+                var text = "";
+                if (window.getSelection) {
+                    text = window.getSelection().toString();
+                } else if (document.selection && document.selection.type != "Control") {
+                    text = document.selection.createRange().text;
+                }
+                return text;
+                }
+
+                function onMouseUp(){
+                  var selection = window.getSelection();
+                  if (selection){
+                    console.log('User has highlighted', text);
+                  callWolframAPI(getSelectionText());
+                  
+                  }
+                  
+                }
+
+                /*
                 editor.on('selection-change', function(range) {
                 if (range) {
                   if (range.start == range.end) {
@@ -89,14 +110,13 @@
 
                     var text = editor.getText(range.start, range.end);
                     console.log('User has highlighted', text);
-                    document.getElementById("side").innerHTML = callWolframAPI(text);
+                    callWolframAPI(text);
                   }
                 } else {
                   console.log('Cursor not in the editor');
                 }
               });
-
-
+                */
 
                
               </script>
