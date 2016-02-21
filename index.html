@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Photon</title>
+    <title>Notes</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
@@ -9,6 +9,7 @@
     <!-- Electron Javascript -->
     <script src="app.js" charset="utf-8"></script>
     <script src="calls.js" charset="utf-8"></script>
+    <script src="fileio.js" charset="utf-8"></script>
   </head>
 
   <body>
@@ -23,12 +24,17 @@
       <div class="window" >
         <div class="window-content" >
           <div class="pane-group" >
+           <div class="pane-sm sidebar" style="resize: horizontal;max-width:100%;overflow: auto;-webkit-user-select:all;height:100%;z-index:1;width:100px;background-color:#C8C8C8;float:left;">
+             <div class="list-group-header">
+               <h4>Search Results</h4>
+               <hr>
+             </div>
+             <ul class="list-group" id="side">
 
-           <div class="pane-sm sidebar" id="side" style="resize: horizontal;max-width:100%;overflow: auto;-webkit-user-select:all;height:100%;z-index:1;width:100px;background-color:#C8C8C8;float:left;"><p>Results here</p>
-              </div>
+             </ul>
+           </div>
             <div class="pane" style="overflow:hidden;">
               <header class="toolbar toolbar-header" id="toolbar" style="z-index:99999;position:fixed; width:100%;text-align:center;">
-                <h1 class="title" style="font-size:20px;">Insert Cool App Name</h1>
                 <div class="toolbar-actions" id="toolbar">
                   <div class="btn-group" style>
                     <button class="btn btn-default ql-bold"  id="bold_button">
@@ -51,10 +57,10 @@
 
                   </div>
                   <div class="btn-group">
-                    <button class="btn btn-default">
+                    <button class="btn btn-default" id="save_button" onclick="saveFile()">
                       <span><p>Save</p></span>
                     </button>
-                    <button class="btn btn-default">
+                    <button class="btn btn-default" id="load_button" onclick="loadFile()">
                       <span><p>Load</p></span>
                     </button>
                   </div>
@@ -83,7 +89,7 @@
 
                     var text = editor.getText(range.start, range.end);
                     console.log('User has highlighted', text);
-                    document.getElementById("side").innerHTML = callAPI(text);
+                    document.getElementById("side").innerHTML = callWolframAPI(text);
                   }
                 } else {
                   console.log('Cursor not in the editor');

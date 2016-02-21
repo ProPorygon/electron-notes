@@ -11,6 +11,7 @@
 }
 
 
+
 #bold_button {
         font-weight: bold;
 }
@@ -46,5 +47,7 @@
 h1{
         font-size: 45px;
         font-family: Curlz MT;
-        color: magenta;
+}
+h4{
+
 }

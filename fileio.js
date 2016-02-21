@@ -1,5 +1,30 @@
-var fs = require('fs');
-var quill = require('quill');
+const fs = require('fs');
+const quill = require('quill');
+const remote = require('electron').remote;
+const dialog = remote.require('electron').dialog;
+
+var loaded_file;
+
+function saveFile() {
+    if(!loaded_file) {
+        dialog.showSaveDialog(function(filename) {
+            if(filename === undefined) return;
+            writeToFile(editor, filename);
+        });
+    }
+    else {
+        writeToFile(editor, loaded_file);
+    }
+}
+
+function loadFile() {
+    dialog.showOpenDialog(function(filenames) {
+        if(filenames === undefined) return;
+        var filename = filenames[0];
+        readFromFile(editor, filename);
+        loaded_file = filename;
+    })
+}
 
 function writeToFile(editor, filename) {
     var html = editor.getHTML();
