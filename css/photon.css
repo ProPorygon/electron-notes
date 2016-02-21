@@ -124,7 +124,7 @@ th {
 * {
   cursor: default;
   -webkit-user-drag: text;
-  -webkit-user-select: none;
+  /*-webkit-user-select: none;*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -315,9 +315,11 @@ h6 {
 .btn {
   display: inline-block;
   padding: 3px 8px;
+  margin-bottom: 0;
   font-size: 12px;
   line-height: 1.4;
-    white-space: nowrap;
+  text-align: center;
+  white-space: nowrap;
   vertical-align: middle;
   cursor: default;
   background-image: none;
