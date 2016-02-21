@@ -10,8 +10,10 @@ function callAPI(inString) {
         var keywords = response.keywords;
         sidebar.innerHTML = "";
         if(keywords == null || keywords.length == 0){
+            sidebar.innerHTML = "No keywords found. \n Please try a more specific search by highlighting."
             return
         }
+
         for (var idx = 0; idx < keywords.length; idx++) {
             var qu = keywords[idx].text;
 
@@ -20,7 +22,7 @@ function callAPI(inString) {
                     console.log(err);
                 else {
                     console.log(result);
-                    console.log(result.queryresult.pod)
+                    console.log(result.queryresult.pod);
 
                     for (var a = 0; a < result.queryresult.pod.length; a++) {
                         var pod = result.queryresult.pod[a];
