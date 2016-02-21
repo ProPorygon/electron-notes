@@ -9,6 +9,9 @@ Binaries are available on the [Releases](https://github.com/ProPorygon/electron-
 You can also install and run from source (make sure you have npm installed):
 ```
 git clone https://github.com/ProPorygon/electron-notes.git
+```
+In the electron-notes directory, run:
+```
 npm install
 npm start
 ```
