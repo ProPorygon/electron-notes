@@ -128,6 +128,3 @@ function callWolframAPI(inString) {
 
         // Do something with data
 }
-
-alert("The search functionality requires internet access. If you are offline, please note that while " +
-    "you cannot make queries, you can still use LookNote as a regular text editor!")
