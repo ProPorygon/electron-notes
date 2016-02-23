@@ -1,8 +1,8 @@
 function callAPI(inString) {
     var AlchemyAPI = require('alchemy-api');
-    var alchemy = new AlchemyAPI('5e0a4198d583aabe8a39557d240670120974a254');
+    var alchemy = new AlchemyAPI('<YOUR ALCHEMY API KEY HERE>');
     var Client = require('node-wolfram');
-    var Wolfram = new Client('WGTR76-VGTY7HUV2X');
+    var Wolfram = new Client('<YOUR WOLFRAM KEY HERE>');
     alchemy.keywords(inString, {}, function (err, response) {
         if (err) throw err;
         var sidebar = document.getElementById("side");
